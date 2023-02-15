@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.thymeleaf.org">
+<head>
+    <title>Meundi 7.4 signup</title>
+    <link href="signup.css" rel="stylesheet">
+    <script src="./signup.js"></script>
+</head>
+<body>
+    <!-- <form > -->
+        <div class="wrapper">
+            <h3>회원가입</h3>
+            <input class="inputbox" id="email" type="text" placeholder="이메일을 입력해 주세요.">
+            <div class="error" id="error__email"></div>
+            <input class="inputbox" id="writer" type="text" placeholder="이름을 입력해 주세요.">
+            <div class="error" id="error__writer"></div>
+            <input class="inputbox" id="password1" type="password" placeholder="비밀번호를 입력해 주세요.">
+            <div class="error" id="error__password1"></div>
+            <input class="inputbox" id="password2" type="password" placeholder="비밀번호를 다시 입력해 주세요.">
+            <div class="error" id="error__password2"></div>
+            <input class="inputbox" id="nickname" type="text" placeholder="닉네임을 입력해주세요.">
+            <div class="error" id="error__nickname"></div>
+            <div class="gender__wrapper">
+                <div class="gender">
+                    <input type="radio" name="gender" id="gender__woman" class="gender__radio">여성
+                </div>
+                <div class="gender">
+                    <input type="radio" name="gender" id="gender__man" class="gender__radio">남성
+                </div>
+            </div>
+            <div class="error" id="error__gender"></div>
+            <div class="age__wrapper">
+                <label>
+                    생년월일 <input type="text" name="yy" id="yy" placeholder="년(4자)" maxlength="4">
+                    <select name="mm" id="mm">
+                        <option value="">월</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <input type="text" name="dd" id="dd" placeholder="일" maxlength="2">
+                </label>
+            </div>
+            <div class="error" id="error__age"></div>
+            <div class="item__of__interest">관심 카테고리</div>
+            <div class="like">
+                <button class="category" id="category1" onclick="clickButton1()">뮤지컬/오페라</button>
+                <button class="category" id="category2" onclick="clickButton2()">문화교양/강좌</button>
+                <button class="category" id="category3" onclick="clickButton3()">클래식</button>
+                <button class="category" id="category4" onclick="clickButton4()">연극</button>
+                <button class="category" id="category5" onclick="clickButton5()">축제</button>           
+            </div>
+            <div class="like">
+                <button class="category" id="category6" onclick="clickButton6()">콘서트</button>
+                <button class="category" id="category7" onclick="clickButton7()">교육/체험</button>
+                <button class="category" id="category8" onclick="clickButton8()">국악</button>
+                <button class="category" id="category9" onclick="clickButton9()">영화</button>
+                <button class="category" id="category10" onclick="clickButton10()">기타</button>
+            </div>
+            <div class="like">
+                <button class="category" id="category11" onclick="clickButton11()">독주/독창성</button>
+                <button class="category" id="category12" onclick="clickButton12()">전시/미술</button>
+                <button class="category" id="category13" onclick="clickButton13()">무용</button>
+            </div>
+            <div class="location__wrapper">
+                <select class="location" id="location">
+                    <option disabled selected>지역을 선택하세요.</option>
+                    <option>종로구</option>
+                    <option>중구</option>
+                    <option>성동구</option>
+                    <option>용산구</option>
+                    <option>성북구</option>
+                    <option>동대문구</option>
+                    <option>광진구</option>
+                    <option>중랑구</option>
+                    <option>노원구</option>
+                    <option>도봉구</option>
+                    <option>강북구</option>
+                    <option>은평구</option>
+                    <option>서대문구</option>
+                    <option>마포구</option>
+                    <option>강서구</option>
+                    <option>양천구</option>
+                    <option>구로구</option>
+                    <option>영등포구</option>
+                    <option>금천구</option>
+                    <option>동작구</option>
+                    <option>관악구</option>
+                    <option>서초구</option>
+                    <option>강남구</option>
+                    <option>송파구</option>
+                    <option>강동구</option>
+                </select>
+            </div>
+            <div class="error" id="error__location"></div>
+            <div class="phone__wrapper">
+                <input id="phone1" class="phoneNum" type="text" onchange="changeFocus1()" onkeyup="onchange()" maxlength="3" />- 
+                <input id="phone2" class="phoneNum" type="text" onchange="changeFocus2()" onkeyup="onchange()" maxlength="4" />-
+                <input id="phone3" class="phoneNum" type="text" onchange="changeFocus3()" onkeyup="onchange()" maxlength="4" />
+            </div>
+            <div class="token__wrapper">
+                <div class="token" id="token">000000</div>
+                <button id="token__button" onclick="getToken()" disabled>인증번호 전송</button>
+            </div>
+            <div class="token__wrapper">
+                <div class="token__timer" id="token__timer">3:00</div>
+                <button id="token__timer__confirm__button" onclick="getTokenTimerConfirm()" disabled>인증완료</button>
+            </div>
+            <hr />
+            <div class="footer">
+                <a href="/1st/login/login.html"><button type="button" id="signup__button" onclick="signup()" disabled>가입하기</button></a>
+            </div>
+        </div>
+    <!-- </form> -->
+</body>
+</html>
